@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Vanilla JS Contact Form Example -->
+    <title>Simple Contact Form - Byte This!</title>
+
+    <!-- Let's Apply Some Styles to Make it Look Nice -->
+    <style>
+        body {
+            font-family: Consolas;
+            font-size: 1.2em;
+            background: linear-gradient(0.25turn, #915cf5, #ce5cf5);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        /* We'll put the main content in this tag */
+        content {
+            display: block;
+            /* Use css props to center vert and horz */
+            position: absolute;
+            width: 80vw;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            border: 2px solid black;
+            border-radius: 20px;
+            padding: 10px;
+
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        #contact-form {
+            padding: 1em;
+            /* Account for padding in width */
+            width: calc(100% - 2em);
+
+            margin: 0;
+        }
+
+        #contact-form input,
+        textarea {
+            width: 100%;
+            margin-bottom: 1em;
+            font-size: 1em;
+            border-radius: 4px;
+
+            /* Gives submit button and inputs the same width */
+            box-sizing: border-box;
+        }
+
+        #contact-form input[type="submit"] {
+            background-color: #ce5cf5;
+            cursor: pointer;
+            height: 2em;
+        }
+
+        #contact-form input[type="submit"]:hover {
+            background-color: #915cf5;
+        }
+
+        #contact-form textarea {
+            height: 6em;
+        }
+    </style>
+
+    <script>
+        /**
+         * When the document is done loading,
+         * we'll listen to the form and handle submissions
+         */
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("contact-form");
+            form.addEventListener("submit", event => {
+                /**
+                 * Normally, a form submit will refresh the page
+                 * Instead, we'll handle the event with JavaScript
+                 * so we need to prevent the default event
+                 */
+                event.preventDefault();
+
+                //Create a dictionary object of the form data
+                const formData = Object.fromEntries(
+                    new FormData(form)
+                );
+
+                onFormSubmit(formData);
+            });
+        });
+
+        /**
+         * When we submit the form, event listener will call this
+         */
+        function onFormSubmit(formData) {
+            console.log("Form Submitted: ", formData);
+
+            //here, you can put code for making a backend call
+            //or, you can put it in another function
+
+
+            //show the confirmation message and remove the form
+            //if this function gets too large, we could always move this part to its own function
+            const template = document.getElementById("confirmation-template");
+            const clone = template.content.cloneNode(true);
+            //insert values from the user input
+            //use innerText, not innerHTML, in case of security issues
+            clone.getElementById("confirm-full-name").innerText = formData.fullName;
+            clone.getElementById("confirm-email").innerText = formData.email;
+            clone.getElementById("confirm-message").innerText = formData.message;
+
+            const container = document.getElementById("contact-form-container");
+            container.removeChild(container.lastElementChild);
+
+            container.appendChild(clone);
+            console.log("Confirmation message shown!");
+        }
+    </script>
+</head>
+
+<body>
+
+    <content>
+        <!-- Simple Greeting for the User -->
+        <h1>Contact Us!</h1>
+        <p>Thank you for your interest! Please fill out the form and we
+            will reply shortly.
+        </p>
+
+        <div id="contact-form-container">
+            <!-- Form Body-->
+            <form id="contact-form">
+
+                <!-- Full Name Input -->
+                <label for="fullName">Full Name:</label>
+                <input type="text" name="fullName" required />
+
+                <!-- Email Input -->
+                <label for="email">Email:</label>
+                <input type="email" name="email" required />
+
+                <!-- Message Input -->
+                <label for="message">Message:</label>
+                <textarea name="message" required></textarea>
+
+
+                <!-- Submit -->
+                <input type="submit" value="Send!" />
+            </form>
+        </div>
+    </content>
+
+    <!-- We'll put the confirmation message in a DOM template -->
+    <template id="confirmation-template">
+        <p><b>Thanks for your message!</b> here is what you gave us:</p>
+        <ul>
+            <li><b>Full Name:</b> <span id="confirm-full-name"></span></li>
+            <li><b>Email:</b> <span id="confirm-email"></span></li>
+            <li><b>Message:</b> <span id="confirm-message"></span></li>
+        </ul>
+    </template>
+</body>
+</html>
