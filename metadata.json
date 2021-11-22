@@ -8,5 +8,9 @@
         "html user input",
         "javascript user input",
         "javascript intercept form"
+    ],
+    "categories": [
+        "Form",
+        "User Input"
     ]
 }
