@@ -12,5 +12,10 @@
     "categories": [
         "Form",
         "User Input"
+    ],
+    "languages": [
+        "HTML",
+        "CSS",
+        "JavaScript"
     ]
 }

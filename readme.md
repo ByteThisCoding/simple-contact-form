@@ -1,7 +1,7 @@
 # simple-contact-form 
 This repo contains a simple example of a contact form with JavaScript processing. Feel free to also checkout our [YouTube Video](https://youtu.be/eizAGVwCv0M) where we code this in real time.
 
-## HTML's Form Element
+## HTML Form Element
 The **form** element represents a section of the document which contains input prompts and controls for the user to fill out. When the user has completed filling out the prompts, they can click the form's 'Submit' button to send the data. These inputs are represented by HTML **input** elements. Every input element associated with a particular form will appear within that form's open and close tags. A webpage can have more than one input form displayed to the user at once. A very basic form example is shown below:
 ```html
 <form id="exampleForm">
