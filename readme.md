@@ -1,6 +1,14 @@
 # simple-contact-form 
 This repo contains a simple example of a contact form with JavaScript processing. Feel free to also checkout our [YouTube Video](https://youtu.be/eizAGVwCv0M) where we code this in real time.
 
+## Form Requirements
+For this form example, we will make a form which is simple in design but functional nonetheless. Our form should:
+1. Allow users to input their full name, email address, and multi line message.
+1. Intercept the "submit" event using JavaScript to prevent the page from reloading.
+1. Create a dictionary (key-value) object using the form contents and log it to the console.
+1. Hide the form and display a confirmation message after the user has submitted the form.
+This is similar to how most forms behave, with the exception of the JavaScript handling / page reload prevention. We'll cover that in more detail in the sections below.
+
 ## HTML Form Element
 The **form** element represents a section of the document which contains input prompts and controls for the user to fill out. When the user has completed filling out the prompts, they can click the form's 'Submit' button to send the data. These inputs are represented by HTML **input** elements. Every input element associated with a particular form will appear within that form's open and close tags. A webpage can have more than one input form displayed to the user at once. A very basic form example is shown below:
 ```html
