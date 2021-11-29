@@ -1,5 +1,7 @@
 # simple-contact-form 
-This repo contains a simple example of a contact form with JavaScript processing. Feel free to also checkout our [YouTube Video](https://youtu.be/eizAGVwCv0M) where we code this in real time.
+This repo contains a simple example of a contact form with JavaScript processing. Feel free to also checkout:
+* Our [YouTube Video](https://youtu.be/eizAGVwCv0M) where we code this in real time.
+* Our [Dev Page](https://bytethisstore.com/articles/pg/simple-contact-form) for more information on coding this type of contact form.
 
 ## Form Requirements
 For this form example, we will make a form which is simple in design but functional nonetheless. Our form should:
