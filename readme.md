@@ -3,6 +3,9 @@ This repo contains a simple example of a contact form with JavaScript processing
 * Our [YouTube Video](https://youtu.be/eizAGVwCv0M) where we code this in real time.
 * Our [Dev Page](https://bytethisstore.com/articles/pg/simple-contact-form) for more information on coding this type of contact form.
 
+## Demo the Live Example
+The live example can be viewed in action on [this page](https://htmlpreview.github.io/?https://github.com/ByteThisStore/simple-contact-form/blob/master/index.html).
+
 ## Form Requirements
 For this form example, we will make a form which is simple in design but functional nonetheless. Our form should:
 1. Allow users to input their full name, email address, and multi line message.
